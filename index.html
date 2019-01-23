@@ -6,20 +6,28 @@
     <title>Unity WebGL Player | SurvivalZombie</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="TemplateData/UnityProgress.js"></script>  
+    <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/SurvivalZombie.json", {onProgress: UnityProgress});
     </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        canvas {
+            position: absolute;
+        }
+        canvas, .webgl-content, #gameContainer {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
   </head>
   <body>
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 540px; height: 960px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">SurvivalZombie</div>
-      </div>
-    </div>
+  <div class="webgl-content">
+      <div id="gameContainer"></div>
+  </div>
   </body>
-</html>
+  </html>
